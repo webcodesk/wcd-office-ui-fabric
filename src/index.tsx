@@ -1,9 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { loadTheme } from 'office-ui-fabric-react';
 // @ts-ignore
 import Application from '@webcodesk/react-app-framework';
 import './index.css';
 import globalSettings from './app/settings';
+import { themeMap } from "./usr/themeMap";
 
 let schema: any;
 let userComponents: any;
@@ -22,6 +24,7 @@ if (process.env.NODE_ENV !== 'production') {
   userFunctions = require('./app/indices-prod/userFunctions').default;
 }
 
+loadTheme(themeMap[globalSettings.theme]);
 
 ReactDOM.render(
   <Application

@@ -1,1 +1,1 @@
-{"model":[]}
+{"model":[{"key":"node2","type":"COMPONENT_PROPERTY_ONE_OF_TYPE","props":{"propertyName":"theme","propertyComment":"\n The theme specifies the color of the components, darkness of the surfaces, level of shadow, appropriate opacity of ink elements, etc.\n","propertyValue":"dark","propertyValueVariants":[{"value":"light"},{"value":"dark"}],"errors":{}},"index":0}]}
