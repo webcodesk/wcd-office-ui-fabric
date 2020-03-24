@@ -1,3 +1,4 @@
+import 'office-ui-fabric-core/dist/css/fabric.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { loadTheme } from 'office-ui-fabric-react';
