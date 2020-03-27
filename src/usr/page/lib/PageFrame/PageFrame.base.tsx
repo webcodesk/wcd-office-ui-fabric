@@ -1,6 +1,6 @@
 import React from 'react';
-import { classNamesFunction } from 'office-ui-fabric-react/lib/Utilities';
-import { IProcessedStyleSet } from 'office-ui-fabric-react/lib/Styling';
+import { classNamesFunction } from '@fluentui/react/lib/Utilities';
+import { IProcessedStyleSet } from '@fluentui/react/lib/Styling';
 import { IPageFrameProps, IPageFrameStyleProps, IPageFrameStyles } from './PageFrame.types';
 
 const getClassNames = classNamesFunction<IPageFrameStyleProps, IPageFrameStyles>();

@@ -1,5 +1,5 @@
 import React from 'react';
-import { styled } from 'office-ui-fabric-react/lib/Utilities';
+import { styled } from '@fluentui/react/lib/Utilities';
 import { IPageFrameProps, IPageFrameStyleProps, IPageFrameStyles } from './PageFrame.types';
 import { PageFrameBase } from './PageFrame.base';
 import { getStyles } from './PageFrame.styles';

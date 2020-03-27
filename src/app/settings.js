@@ -1,2 +1,2 @@
 
-export default {"theme":"dark"};
+export default {"theme":"light"};
