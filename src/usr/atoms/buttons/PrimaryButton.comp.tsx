@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { PrimaryButton as PrimaryButtonOF } from '@fluentui/react';
 
-interface PrimaryButtonProps {
-  text?: string;
+export interface PrimaryButtonProps {
+  text: string;
   onClick?: () => void;
 }
 
