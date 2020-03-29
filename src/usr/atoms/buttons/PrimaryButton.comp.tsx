@@ -1,8 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { PrimaryButton as PrimaryButtonOF } from '@fluentui/react';
+import pickWithValues from "../../utils/pickWithValues";
 
 export interface PrimaryButtonProps {
+  allowDisabledFocus?: boolean;
   text: string;
   onClick?: () => void;
 }
@@ -13,6 +15,10 @@ export interface PrimaryButtonProps {
 class PrimaryButton extends React.Component<PrimaryButtonProps, any> {
 
   static propTypes: PropTypes.InferProps<PrimaryButtonProps> = {
+    /**
+     * Whether the button can have focus in disabled mode
+     */
+    allowDisabledFocus: PropTypes.bool,
     /**
      * Label of the button.
      */
@@ -42,8 +48,16 @@ class PrimaryButton extends React.Component<PrimaryButtonProps, any> {
   };
 
   render() {
+    const {
+      allowDisabledFocus,
+      text
+    } = this.props;
+    const properties = pickWithValues({allowDisabledFocus, text});
     return (
-        <PrimaryButtonOF text={this.props.text} onClick={this.handleButtonClick} />
+        <PrimaryButtonOF
+            {...properties}
+            onClick={this.handleButtonClick}
+        />
     );
   }
 }
