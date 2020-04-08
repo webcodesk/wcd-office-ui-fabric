@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { TextField as TextFieldOF } from '@fluentui/react';
-import pickWithValues from "../../utils/pickWithValues";
+import pickWithValues from "usr/a_lib/utils/pickWithValues";
 
 export interface TextFieldProps {
     label?: string;

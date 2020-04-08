@@ -1,17 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { PageFrame as PageFrameOF } from "./lib/PageFrame/PageFrame";
+import { PageFrame } from "usr/a_lib/components/PageFrame/PageFrame";
 
 interface PageFrameProps {
+  fullHeight: boolean;
   children: React.ElementType[];
 }
 
 /**
  * PageFrame
  */
-class PageFrame extends React.Component<PageFrameProps, any> {
+class PageWithSidebar extends React.Component<PageFrameProps, any> {
 
   static propTypes: PropTypes.InferProps<PageFrameProps> = {
+    fullHeight: PropTypes.bool,
     /**
      * Children components
      */
@@ -19,6 +21,7 @@ class PageFrame extends React.Component<PageFrameProps, any> {
   };
 
   static defaultProps: PageFrameProps = {
+    fullHeight: false,
     children: [],
   };
 
@@ -28,11 +31,11 @@ class PageFrame extends React.Component<PageFrameProps, any> {
 
   render(): JSX.Element {
     return (
-        <PageFrameOF>
+        <PageFrame fullHeight={this.props.fullHeight}>
           {this.props.children}
-        </PageFrameOF>
+        </PageFrame>
     );
   }
 }
 
-export default PageFrame;
+export default PageWithSidebar;
