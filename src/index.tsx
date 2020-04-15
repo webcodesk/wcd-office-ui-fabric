@@ -7,6 +7,11 @@ import Application from '@webcodesk/react-app-framework';
 import './index.css';
 import globalSettings from './app/settings';
 import { themeMap } from "./usr/themeMap";
+import { initializeIcons } from 'office-ui-fabric-react/lib/Icons';
+
+initializeIcons();
+
+
 
 let schema: any;
 let userComponents: any;
