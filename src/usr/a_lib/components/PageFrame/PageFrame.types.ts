@@ -37,13 +37,15 @@ export interface IPageFrameProps {
      */
     theme?: ITheme;
 
+    fullHeight?: boolean;
+
     /**
      * Call to provide customized styling that will layer on top of the variant rules.
      */
     styles?: IStyleFunctionOrObject<IPageFrameStyleProps, IPageFrameStyles>;
 }
 
-export type IPageFrameStyleProps = Required<Pick<IPageFrameProps, 'theme'>>;
+export type IPageFrameStyleProps = Required<Pick<IPageFrameProps, 'theme'>> & Pick<IPageFrameProps, 'fullHeight'>;
 export interface IPageFrameStyles {
     /**
      *  Style for the root element.
