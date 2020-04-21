@@ -37,7 +37,7 @@
     "@types/react": "16.9.23",
     "@types/react-dom": "16.9.5",
     "@webcodesk/react-app-framework": "2.0.28",
-    "@webcodesk/webcodesk-srv": "2.0.2",
+    "@webcodesk/webcodesk-srv": "2.0.3",
     "lodash": "4.17.15",
     "office-ui-fabric-core": "11.0.0",
     "react": "16.13.0",
