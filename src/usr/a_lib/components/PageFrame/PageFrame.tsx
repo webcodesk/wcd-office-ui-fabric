@@ -9,16 +9,17 @@ const getClassNames = classNamesFunction<IPageFrameStyleProps, IPageFrameStyles>
 class PageFrameBase extends React.Component<IPageFrameProps, {}> {
 
     public render(): JSX.Element {
-        const { styles, theme, fullHeight } = this.props;
+        const { styles, theme, fullHeight, centralArea } = this.props;
         const _classNames: IProcessedStyleSet<IPageFrameStyles> = getClassNames(styles!, {
             theme: theme!,
             fullHeight
         });
+
         return (
             <div className={_classNames.root}>
-                <div className={_classNames.main}>
-                    <div className={_classNames.content}>
-                        {this.props.children}
+                <div className={_classNames.centralAreaWrapper}>
+                    <div className={_classNames.centralArea}>
+                        {centralArea!.centralAreaElement}
                     </div>
                 </div>
             </div>

@@ -1,28 +1,31 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { PageFrame } from "usr/a_lib/components/PageFrame/PageFrame";
-
-interface PageFrameProps {
-  fullHeight: boolean;
-  children: React.ElementType[];
-}
+import { IPageFrameProps } from "usr/a_lib/components/PageFrame/PageFrame.types";
 
 /**
  * PageFrame
  */
-class PageWithSidebar extends React.Component<PageFrameProps, any> {
+class PageWithSidebar extends React.Component<IPageFrameProps, any> {
 
-  static propTypes: PropTypes.InferProps<PageFrameProps> = {
+  static propTypes: PropTypes.InferProps<IPageFrameProps> = {
     fullHeight: PropTypes.bool,
     /**
-     * Children components
+     * The central area in the page
      */
-    children: PropTypes.arrayOf(PropTypes.element),
+    centralArea: PropTypes.shape({
+      /**
+       * Sets the central area element
+       */
+      centralAreaElement: PropTypes.element
+    })
   };
 
-  static defaultProps: PageFrameProps = {
+  static defaultProps: IPageFrameProps = {
     fullHeight: false,
-    children: [],
+    centralArea: {
+      centralAreaElement: <span />,
+    }
   };
 
   // constructor(props: PageFrameProps) {
@@ -30,10 +33,12 @@ class PageWithSidebar extends React.Component<PageFrameProps, any> {
   // }
 
   render(): JSX.Element {
+    const { fullHeight, centralArea } = this.props;
     return (
-        <PageFrame fullHeight={this.props.fullHeight}>
-          {this.props.children}
-        </PageFrame>
+        <PageFrame
+            fullHeight={fullHeight}
+            centralArea={centralArea}
+        />
     );
   }
 }

@@ -15,18 +15,17 @@ export const getStyles = (props: IPageFrameStyleProps): IPageFrameStyles => {
         root: [
             rootItem,
         ],
-        main: [
+        centralAreaWrapper: [
             {
                 display: 'flex',
                 flexDirection: 'column',
                 flexGrow: 1,
             }
         ],
-        content: [
+        centralArea: [
             {
                 display: 'flex',
                 position: 'relative',
-                flexDirection: 'column',
                 flexGrow: 1,
             }
         ],

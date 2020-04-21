@@ -1,5 +1,6 @@
 import { ITheme, IStyle } from '@fluentui/react/lib/Styling';
 import { IStyleFunctionOrObject } from '@fluentui/react/lib/Utilities';
+import React from "react";
 
 export interface IPageFrameProps {
     // /**
@@ -39,6 +40,10 @@ export interface IPageFrameProps {
 
     fullHeight?: boolean;
 
+    centralArea?: {
+        centralAreaElement?: React.ReactNode;
+    }
+
     /**
      * Call to provide customized styling that will layer on top of the variant rules.
      */
@@ -52,9 +57,9 @@ export interface IPageFrameStyles {
      */
     root?: IStyle;
 
-    main?: IStyle;
+    centralAreaWrapper?: IStyle;
 
-    content?: IStyle;
+    centralArea?: IStyle;
 
     // /**
     //  * Style for the chart.

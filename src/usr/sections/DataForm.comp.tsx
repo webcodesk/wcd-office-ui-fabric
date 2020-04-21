@@ -25,7 +25,7 @@ class DataForm extends React.Component<DataFormProps, any> {
         //         label: PropTypes.string,
         //     }),
         //     PropTypes.shape({
-        //         type: PropTypes.oneOf(['type1']),
+        //         type: PropTypes.oneOf(['type2']),
         //         label: PropTypes.string,
         //         values: PropTypes.arrayOf(PropTypes.shape({
         //             id: PropTypes.string,
