@@ -38,11 +38,15 @@ export interface IPageFrameProps {
      */
     theme?: ITheme;
 
-    fullHeight?: boolean;
+    headerBarHeight?: number;
+    commandBarHeight?: number;
 
-    centralArea?: {
-        centralAreaElement?: React.ReactNode;
-    }
+    leftAreaWidth?: number;
+    leftAreaElement?: React.ReactNode;
+
+    centralAreaElement?: React.ReactNode;
+
+    mobileBreakpoint?: number;
 
     /**
      * Call to provide customized styling that will layer on top of the variant rules.
@@ -50,16 +54,38 @@ export interface IPageFrameProps {
     styles?: IStyleFunctionOrObject<IPageFrameStyleProps, IPageFrameStyles>;
 }
 
-export type IPageFrameStyleProps = Required<Pick<IPageFrameProps, 'theme'>> & Pick<IPageFrameProps, 'fullHeight'>;
+// Constructs a type consisting of all properties but theme should be required
+export type IPageFrameStyleProps = Required<Pick<IPageFrameProps, 'theme'>> & IPageFrameProps;
+
 export interface IPageFrameStyles {
     /**
      *  Style for the root element.
      */
     root?: IStyle;
 
-    centralAreaWrapper?: IStyle;
+    headerAreaRowFlex?: IStyle;
+    headerAreaRowFixed?: IStyle;
+    headerAreaLeftColumnFlex?: IStyle;
+    headerAreaCentralColumnFlex?: IStyle;
 
-    centralArea?: IStyle;
+    commandAreaRowFlex?: IStyle;
+    commandAreaRowFixed?: IStyle;
+    commandAreaLeftColumnFlex?: IStyle;
+    commandAreaCentralColumnFlex?: IStyle;
+
+    contentAreaRowFlex?: IStyle;
+    contentAreaLeftColumnFlex?: IStyle;
+    contentAreaCentralColumnFlex?: IStyle;
+    contentAreaLeftColumnFixed?: IStyle;
+    contentAreaCentralColumnFixed?: IStyle;
+
+    // commandWraper?:
+    //
+    // centralAreaWrapper?: IStyle;
+    //
+    // centralArea?: IStyle;
+    //
+    // leftArea?: IStyle;
 
     // /**
     //  * Style for the chart.
